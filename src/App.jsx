@@ -51,3 +51,4 @@ function Calendar({data}){return <><h1>Calendar</h1><p className="muted">Your fu
 function Insights({data}){const total=data.expenses.reduce((s,x)=>s+Number(x.amount||0),0);return <><h1>Insights</h1><div className="grid"><Card title="Total expenses" value={`₹${total.toLocaleString("en-IN")}`} text="all recorded entries"/><Card title="Expense entries" value={data.expenses.length} text="recorded"/><Card title="Tasks completed" value={data.tasks.filter(x=>x.done).length} text="completed"/><Card title="Goals" value={data.goals.length} text="created"/></div><section className="panel"><h2>Charts</h2><p className="muted">Charts for monthly spending, categories, cash/card, income, savings, loans, hours and goal progress will be added in the Insights phase.</p></section></>}
 function sumHours(a){return a.reduce((s,x)=>s+Number(x.hours||0),0)+"h"}
 createRoot(document.getElementById("root")).render(<App/>);
+export default App;
